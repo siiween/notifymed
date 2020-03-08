@@ -1,4 +1,4 @@
-{% load crispy_forms_tags %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,7 +18,35 @@
         <div class="col-md-3"></div>
         <div class="col-md-6 border p-3 rounded">
           <h1>Contact us</h1>
-          {{ ContactForm|crispy }}
+
+
+            <div id="div_id_topic" class="form-group"> <label for="id_topic" class="control-label  requiredField">
+                Topic<span class="asteriskField">*</span>
+              </label>
+              <div class="controls ">
+                <select name="topic" class="select form-control" id="id_topic">
+                  <option value="general">General enquiry</option>
+                  <option value="bug">Bug report</option>
+                  <option value="suggestion">Suggestion</option>
+                </select>
+              </div>
+            </div>
+            <div id="div_id_message" class="form-group">
+              <label for="id_message" class="control-label  requiredField">
+                Message<span class="asteriskField">*</span>
+              </label>
+            <div class="controls ">
+              <textarea name="message" cols="40" rows="10" class="textarea form-control" required id="id_message"></textarea>
+            </div> </div>
+
+            <div id="div_id_sender" class="form-group">
+              <label for="id_sender" class="control-label ">
+                Sender
+              </label>
+              <div class="controls "> <input type="email" name="sender" class="emailinput form-control" id="id_sender">
+              </div>
+            </div>
+
           <button type="submit" class="float-right btn btn-primary">Submit</button>
         </div>
       </div>
